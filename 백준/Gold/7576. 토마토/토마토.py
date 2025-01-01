@@ -1,6 +1,8 @@
 # 7576 토마토
 
 from collections import deque
+import sys
+input = sys.stdin.readline
 
 M, N = map(int, input().split()) # M은 상자의 가로, N은 상자의 세로 칸 수
 T = [[] for _ in range(N)]
@@ -37,9 +39,9 @@ while len(queue) != 0:
 
     for i in range(4):
         # (1) 이동이 불가한 경우 pass
-        if r + dr[i] < 0 or N<= r + dr[i]:
+        if r + dr[i] < 0 or N <= r + dr[i]:
             continue
-        if c + dc[i] < 0 or M<= c + dc[i]:
+        if c + dc[i] < 0 or M <= c + dc[i]:
             continue
 
         # (2) 이동은 가능하나 토마토가 존재하지 않는 경우 pass
