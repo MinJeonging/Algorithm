@@ -12,7 +12,7 @@ for _ in range(T):
     found = False
     # y일때 <y, y>
     first = y
-    for i in range(M):
+    for i in range(M): # O(M)의 시간복잡도만에 구할 수 있음.
         if first == x:
             print(y + i * N)
             found = True
@@ -21,6 +21,6 @@ for _ in range(T):
         first += N
         if first > M:
             first -= M
-            
+
     if not found:
         print(-1)
