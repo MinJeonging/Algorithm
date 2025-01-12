@@ -26,6 +26,7 @@ for i in range(H):
             left -= 1
             if A[i][left] == 1:
                 left_bool = True
+                break
 
         if not left_bool: # 백트래킹
             continue 
@@ -34,6 +35,7 @@ for i in range(H):
             right += 1
             if A[i][right] == 1:
                 right_bool = True
+                break
 
         if left_bool and right_bool:
             rain += (right - left - 1) 
