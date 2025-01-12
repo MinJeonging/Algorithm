@@ -27,6 +27,9 @@ for i in range(H):
             if A[i][left] == 1:
                 left_bool = True
 
+        if not left_bool: # 백트래킹
+            continue 
+
         while right < W - 1 and not right_bool:
             right += 1
             if A[i][right] == 1:
