@@ -20,23 +20,15 @@
 
 """
 
-# 입력 처리
 N, T = map(int, input().split())
 
-# 주기 길이 (4N - 2)
-cycle_length = 4 * N - 2
+A = []
+for i in range(1, 2 * N + 1):
+    A.append(i)
+for i in range(2 * N - 1, 1, -1):
+    A.append(i)
 
-# 현재 차례를 주기로 나눈 나머지 계산
-current = T % cycle_length
+T -= 1
+T %= (4 * N - 2)
 
-# 나머지가 0이면 주기의 마지막 값
-if current == 0:
-    current = cycle_length
-
-# 결과 계산
-if current <= 2 * N:  # 증가하는 구간
-    result = current
-else:  # 감소하는 구간
-    result = 2 * N - (current - 2 * N)
-
-print(result)
+print(A[T])
